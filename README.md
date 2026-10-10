@@ -4,8 +4,8 @@ Upload a PDF and ask it questions. Answers stream in token by token and cite the
 
 | | |
 |---|---|
-| Live demo | _added after deploy_ (click **Try a sample PDF**) |
-| API docs (Swagger) | _added after deploy_ (`/docs`) |
+| Live demo | https://docmind-app-gamma.vercel.app (click **Try a sample PDF**; the free API host may take ~30 s to wake up) |
+| API docs (Swagger) | https://docmind-api-b50a.onrender.com/docs |
 
 ![DocMind](docs/screenshots/chat.jpg)
 
