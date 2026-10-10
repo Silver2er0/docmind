@@ -1,0 +1,43 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 5 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+5 0 obj
+<< /Length 610 >>
+stream
+BT /F1 12 Tf 16 TL 50 740 Td (DocMind: technical overview) Tj T* () Tj T* (DocMind lets you ask questions about a PDF and get answers with page citations.) Tj T* (It is built with a NestJS API and a React front end.) Tj T* () Tj T* (How uploads work) Tj T* (When you upload a PDF, the server extracts the text of every page and splits it into) Tj T* (overlapping chunks of about one thousand characters. Each chunk is turned into a) Tj T* (vector embedding with 768 dimensions and stored in PostgreSQL using the pgvector extension.) Tj T* (Uploaded documents are deleted automatically after 24 hours.) Tj T* ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 7 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+7 0 obj
+<< /Length 722 >>
+stream
+BT /F1 12 Tf 16 TL 50 740 Td (How questions work) Tj T* () Tj T* (A question is embedded with the same model. The database returns the five closest chunks) Tj T* (using cosine distance, which is the retrieval step of retrieval-augmented generation \(RAG\).) Tj T* (The chunks are placed in a prompt and the language model, Gemini, writes an answer that) Tj T* (is streamed back to the browser token by token using Server-Sent Events.) Tj T* () Tj T* (Limits and safety) Tj T* (Each visitor can keep three documents of up to 60 pages. Requests are rate limited and a) Tj T* (global daily cap protects the free-tier AI quota. If the answer is not in the document,) Tj T* (the assistant says so instead of guessing.) Tj T* ET
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000000317 00000 n 
+0000000978 00000 n 
+0000001104 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+1877
+%%EOF

@@ -1,0 +1,38 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "esm"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Document {
+  id        String   @id @default(cuid())
+  ownerId   String
+  name      String
+  pages     Int
+  createdAt DateTime @default(now())
+  chunks    Chunk[]
+
+  @@index([ownerId, createdAt])
+}
+
+model Chunk {
+  id         String                 @id @default(cuid())
+  documentId String
+  document   Document               @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  page       Int
+  idx        Int
+  content    String
+  embedding  Unsupported("vector(768)")?
+
+  @@index([documentId])
+}
+
+/// One row per UTC day: caps total LLM spend on the free-tier key.
+model Usage {
+  day   String @id
+  count Int    @default(0)
+}
