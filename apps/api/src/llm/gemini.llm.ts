@@ -7,7 +7,7 @@ const EMBED_BATCH = 100;
 @Injectable()
 export class GeminiLlm extends Llm {
   private readonly embedModel = process.env.GEMINI_EMBED_MODEL ?? 'gemini-embedding-001';
-  private readonly chatModel = process.env.GEMINI_MODEL ?? 'gemini-2.5-flash';
+  private readonly chatModel = process.env.GEMINI_MODEL ?? 'gemini-3.1-flash-lite';
 
   private async post(path: string, body: unknown, signal?: AbortSignal) {
     const res = await fetch(`${API}/${path}`, {

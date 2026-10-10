@@ -41,7 +41,7 @@ A demo with a free LLM key needs guardrails, so these are part of the design:
 |---|---|
 | Frontend | React 19, Vite, TypeScript, Tailwind CSS 4 |
 | Backend | NestJS, Prisma 7 (+ raw SQL for vector ops), `unpdf` for PDF text, Swagger, Throttler, Helmet |
-| AI | Gemini embeddings (`gemini-embedding-001`, 768 dims) and Gemini Flash for generation, behind an `Llm` interface |
+| AI | Gemini embeddings (`gemini-embedding-001`, 768 dims) and Gemini Flash-Lite (`gemini-3.1-flash-lite`, fast and free-tier friendly) for generation, behind an `Llm` interface |
 | Database | PostgreSQL with `pgvector` |
 | Tests / CI | Vitest unit + e2e (real Postgres, real PDF upload, real vector search, SSE parsing), GitHub Actions |
 | Hosting | Render (API), Vercel (web), Neon (Postgres with pgvector) |
